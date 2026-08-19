@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "alumno": "Lucas Benítez",
+    "curso": "Primero Primera",
+    "tutor": "Claudio Benítez",
+    "email": "c.benitez@example.com",
+    "telefono": "+5493512011001"
+  },
+  {
+    "id": 2,
+    "alumno": "Martina Morales",
+    "curso": "Primero Primera",
+    "tutor": "Valeria Morales",
+    "email": "v.morales@example.com",
+    "telefono": "+5493512011002"
+  },
+  {
+    "id": 3,
+    "alumno": "Thiago Herrera",
+    "curso": "Primero Segunda",
+    "tutor": "Gonzalo Herrera",
+    "email": "g.herrera@example.com",
+    "telefono": "+5493512011003"
+  },
+  {
+    "id": 4,
+    "alumno": "Valentina Castro",
+    "curso": "Primero Segunda",
+    "tutor": "Patricia Castro",
+    "email": "p.castro@example.com",
+    "telefono": "+5493512011004"
+  },
+  {
+    "id": 5,
+    "alumno": "Bautista Navarro",
+    "curso": "Primero Segunda",
+    "tutor": "Esteban Navarro",
+    "email": "e.navarro@example.com",
+    "telefono": "+5493512011005"
+  },
+  {
+    "id": 6,
+    "alumno": "Camila Romero",
+    "curso": "Segundo Primera",
+    "tutor": "Silvina Romero",
+    "email": "s.romero@example.com",
+    "telefono": "+5493512021006"
+  },
+  {
+    "id": 7,
+    "alumno": "Santino Díaz",
+    "curso": "Segundo Primera",
+    "tutor": "Diego Díaz",
+    "email": "d.diaz@example.com",
+    "telefono": "+5493512021007"
+  },
+  {
+    "id": 8,
+    "alumno": "Mía Fernández",
+    "curso": "Segundo Primera",
+    "tutor": "Luciana Fernández",
+    "email": "l.fernandez@example.com",
+    "telefono": "+5493512021008"
+  },
+  {
+    "id": 9,
+    "alumno": "Mateo Acuña",
+    "curso": "Segundo Segunda",
+    "tutor": "Hernán Acuña",
+    "email": "h.acuna@example.com",
+    "telefono": "+5493512021009"
+  },
+  {
+    "id": 10,
+    "alumno": "Zoe Domínguez",
+    "curso": "Segundo Segunda",
+    "tutor": "Carolina Domínguez",
+    "email": "c.dominguez@example.com",
+    "telefono": "+5493512021010"
+  },
+  {
+    "id": 11,
+    "alumno": "Joaquín Pereyra",
+    "curso": "Tercero Primera",
+    "tutor": "Fernando Pereyra",
+    "email": "f.pereyra@example.com",
+    "telefono": "+5493512031011"
+  },
+  {
+    "id": 12,
+    "alumno": "Emma Giménez",
+    "curso": "Tercero Primera",
+    "tutor": "Andrea Giménez",
+    "email": "a.gimenez@example.com",
+    "telefono": "+5493512031012"
+  },
+  {
+    "id": 13,
+    "alumno": "Tomás Quiroga",
+    "curso": "Tercero Primera",
+    "tutor": "Federico Quiroga",
+    "email": "f.quiroga@example.com",
+    "telefono": "+5493512031013"
+  },
+  {
+    "id": 14,
+    "alumno": "Delfina Medina",
+    "curso": "Tercero Segunda",
+    "tutor": "Gisela Medina",
+    "email": "g.medina@example.com",
+    "telefono": "+5493512031014"
+  },
+  {
+    "id": 15,
+    "alumno": "Agustín Silva",
+    "curso": "Tercero Segunda",
+    "tutor": "Roberto Silva",
+    "email": "r.silva@example.com",
+    "telefono": "+5493512031015"
+  },
+  {
+    "id": 16,
+    "alumno": "Lautaro Ponce",
+    "curso": "Cuarto Primera",
+    "tutor": "Mauricio Ponce",
+    "email": "m.ponce@example.com",
+    "telefono": "+5493512041016"
+  },
+  {
+    "id": 17,
+    "alumno": "Juliana Torres",
+    "curso": "Cuarto Primera",
+    "tutor": "Claudia Torres",
+    "email": "c.torres@example.com",
+    "telefono": "+5493512041017"
+  },
+  {
+    "id": 18,
+    "alumno": "Benjamín Flores",
+    "curso": "Cuarto Primera",
+    "tutor": "Marcos Flores",
+    "email": "m.flores@example.com",
+    "telefono": "+5493512041018"
+  },
+  {
+    "id": 19,
+    "alumno": "Paulina Ríos",
+    "curso": "Cuarto Segunda",
+    "tutor": "Lorena Ríos",
+    "email": "l.rios@example.com",
+    "telefono": "+5493512041019"
+  },
+  {
+    "id": 20,
+    "alumno": "Facundo Luna",
+    "curso": "Cuarto Segunda",
+    "tutor": "Rodrigo Luna",
+    "email": "sofilopper1338@gmail.com",
+    "telefono": "+5493512041020"
+  },
+  {
+    "id": 21,
+    "alumno": "Catalina Vega",
+    "curso": "Cuarto Segunda",
+    "tutor": "Sabrina Vega",
+    "email": "s.vega@example.com",
+    "telefono": "+5493512041021"
+  },
+  {
+    "id": 22,
+    "alumno": "Ignacio Roldán",
+    "curso": "Quinto Primera",
+    "tutor": "Javier Roldán",
+    "email": "j.roldan@example.com",
+    "telefono": "+5493512051022"
+  },
+  {
+    "id": 23,
+    "alumno": "Victoria Mendoza",
+    "curso": "Quinto Primera",
+    "tutor": "Mariela Mendoza",
+    "email": "m.mendoza@example.com",
+    "telefono": "+5493512051023"
+  },
+  {
+    "id": 24,
+    "alumno": "Nicolás Cabrera",
+    "curso": "Quinto Segunda",
+    "tutor": "Marcelo Cabrera",
+    "email": "m.cabrera@example.com",
+    "telefono": "+5493512051024"
+  },
+  {
+    "id": 25,
+    "alumno": "Abril Sánchez",
+    "curso": "Quinto Segunda",
+    "tutor": "Romina Sánchez",
+    "email": "r.sanchez@example.com",
+    "telefono": "+5493512051025"
+  },
+  {
+    "id": 26,
+    "alumno": "Bruno Toledo",
+    "curso": "Quinto Segunda",
+    "tutor": "Fabián Toledo",
+    "email": "f.toledo@example.com",
+    "telefono": "+5493512051026"
+  },
+  {
+    "id": 27,
+    "alumno": "Franco Ortiz",
+    "curso": "Sexto Primera",
+    "tutor": "Daniel Ortiz",
+    "email": "d.ortiz@example.com",
+    "telefono": "+5493512061027"
+  },
+  {
+    "id": 28,
+    "alumno": "Milagros Carrizo",
+    "curso": "Sexto Primera",
+    "tutor": "Beatriz Carrizo",
+    "email": "b.carrizo@example.com",
+    "telefono": "+5493512061028"
+  },
+  {
+    "id": 29,
+    "alumno": "Julián Varela",
+    "curso": "Sexto Primera",
+    "tutor": "Sergio Varela",
+    "email": "s.varela@example.com",
+    "telefono": "+5493512061029"
+  },
+  {
+    "id": 30,
+    "alumno": "Florencia Guzmán",
+    "curso": "Sexto Segunda",
+    "tutor": "Adriana Guzmán",
+    "email": "a.guzman@example.com",
+    "telefono": "+5493512061030"
+  },
+  {
+    "id": 31,
+    "alumno": "Manuel Paz",
+    "curso": "Sexto Segunda",
+    "tutor": "Gustavo Paz",
+    "email": "g.paz@example.com",
+    "telefono": "+5493512061031"
+  },
+  {
+    "id": 32,
+    "alumno": "Luciana Castillo",
+    "curso": "Sexto Segunda",
+    "tutor": "Elena Castillo",
+    "email": "e.castillo@example.com",
+    "telefono": "+5493512061032"
+  }
+]

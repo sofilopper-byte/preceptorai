@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>PreceptorAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --azul: #1e3a5f;
+    --azul-claro: #eef3f8;
+    --borde: #d7e0ea;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #1a1a1a;
+    background: #fafbfc;
+  }
+  h1 { color: var(--azul); font-size: 1.6rem; margin-bottom: 4px; }
+  p.sub { color: #667; margin-top: 0; }
+  textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  button {
+    margin-top: 12px;
+    background: var(--azul);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; cursor: default; }
+  .comunicado {
+    background: var(--azul-claro);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 14px;
+  }
+  .comunicado h3 { margin: 0 0 4px 0; color: var(--azul); }
+  .comunicado .meta { font-size: 0.85rem; color: #667; margin-bottom: 8px; }
+  .comunicado p { white-space: pre-wrap; margin: 0; }
+  .estado-envio { margin-top: 8px; font-size: 0.85rem; color: #667; }
+  #estado { margin-top: 10px; font-size: 0.9rem; color: #667; }
+  #resultado { margin-top: 20px; }
+</style>
+</head>
+<body>
+  <h1>PreceptorAI</h1>
+  <p class="sub">Escribí el aviso tal cual lo pensás, sin formato. El agente arma los comunicados por curso.</p>
+
+  <textarea id="aviso" placeholder='Ej: "El viernes 4to y 5to entran a las 10:00 por jornada institucional, y el resto no viene."'></textarea>
+  <br />
+  <button id="btn">Generar comunicados</button>
+  <div id="estado"></div>
+
+  <div id="resultado"></div>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const estado = document.getElementById("estado");
+    const resultado = document.getElementById("resultado");
+
+    btn.addEventListener("click", async () => {
+      const aviso = document.getElementById("aviso").value.trim();
+      if (!aviso) return;
+
+      btn.disabled = true;
+      estado.textContent = "Analizando el aviso y consultando la base de alumnos...";
+      resultado.innerHTML = "";
+
+      try {
+        const res = await fetch("/procesar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ aviso }),
+        });
+        if (!res.ok) throw new Error("Error del servidor: " + res.status);
+        const data = await res.json();
+
+        estado.textContent = "Listo.";
+        resultado.innerHTML = data.comunicados.map((c, i) => `
+          <div class="comunicado">
+            <h3>${c.curso}</h3>
+            <div class="meta">${c.cantidad_familias} familia(s) afectada(s)</div>
+            <p>${c.texto}</p>
+            <button class="btn-enviar" data-idx="${i}">Enviar por email</button>
+            <div class="estado-envio" id="estado-envio-${i}"></div>
+          </div>
+        `).join("");
+
+        window._comunicados = data.comunicados;
+
+        document.querySelectorAll(".btn-enviar").forEach(b => {
+          b.addEventListener("click", async (e) => {
+            const idx = e.target.dataset.idx;
+            const c = window._comunicados[idx];
+            const estadoEnvio = document.getElementById(`estado-envio-${idx}`);
+            e.target.disabled = true;
+            estadoEnvio.textContent = "Enviando...";
+            try {
+              const res = await fetch("/enviar-curso", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ curso: c.curso, texto: c.texto }),
+              });
+              if (!res.ok) {
+                const err = await res.json().catch(() => ({}));
+                throw new Error(err.detail || ("Error del servidor: " + res.status));
+              }
+              const data = await res.json();
+              estadoEnvio.textContent = `Enviado a ${data.cantidad} tutor(es).`;
+            } catch (err) {
+              estadoEnvio.textContent = "Error: " + err.message;
+              e.target.disabled = false;
+            }
+          });
+        });
+      } catch (err) {
+        estado.textContent = "Ocurrió un error: " + err.message;
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
